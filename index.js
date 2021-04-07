@@ -22,17 +22,52 @@ inquirer
         {
             type: "input",
             name: "title",
-            message: "What is the title of they project?",
-
+            message: "What is the title of the project?",
         },
-
-
-
-
-
-
-
-
-
+        {
+            type: "input",
+            name: "description",
+            message: "What is the description of the project?",
+        },
+        {
+            type: "input",
+            name: "toc",
+            message: "List the Table of Contents?",
+        },
+        {
+            type: "input",
+            name: "installation",
+            message: "What are the installation instructions?",
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "Include instructions of how the applications is used?",
+        },
+        {
+            type: "input",
+            name: "license",
+            message: "What type of license is this project?",
+        },
+        {
+            type: "input",
+            name: "contributions",
+            message: "How do users contribute to this project?",
+        },
+        {
+            type: "input",
+            name: "tests",
+            message: "Are there any special testing procedures? If so, list the instructions.",
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the GitHub username for this project?",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What email address will be used for this project?",
+        },
 
     ])
