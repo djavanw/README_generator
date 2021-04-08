@@ -1,5 +1,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require("util");
+const generateMarkdown = require("./util/generateMarkdown");
+
+
+
+//Question validation, Ensures question is answered
+const needAnswer = function (valueN) {
+    if(valueN) {
+        return true;
+    } else {
+        return "An answer is needed to move to the next question."
+    }
+};
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
@@ -17,57 +30,112 @@ const fs = require("fs");
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
-inquirer
-    .prompt([
-        {
-            type: "input",
-            name: "title",
-            message: "What is the title of the project?",
-        },
-        {
-            type: "input",
-            name: "description",
-            message: "What is the description of the project?",
-        },
-        {
-            type: "input",
-            name: "toc",
-            message: "List the Table of Contents?",
-        },
-        {
-            type: "input",
-            name: "installation",
-            message: "What are the installation instructions?",
-        },
-        {
-            type: "input",
-            name: "usage",
-            message: "Include instructions of how the applications is used?",
-        },
-        {
-            type: "input",
-            name: "license",
-            message: "What type of license is this project?",
-        },
-        {
-            type: "input",
-            name: "contributions",
-            message: "How do users contribute to this project?",
-        },
-        {
-            type: "input",
-            name: "tests",
-            message: "Are there any special testing procedures? If so, list the instructions.",
-        },
-        {
-            type: "input",
-            name: "github",
-            message: "What is the GitHub username for this project?",
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What email address will be used for this project?",
-        },
 
-    ])
+//Array of questions for the user to answer.
+
+const questions = [
+    {
+        type: "input",
+        name: "title",
+        message: "What is the title of the project?",
+        validate: needAnswer,
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "What is the description of the project?",
+        validate: needAnswer,
+    },
+    {
+        type: "input",
+        name: "toc",
+        message: "List the Table of Contents?",
+        default: "See the different sections."
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "What are the installation instructions?",
+        validate: needAnswer,
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Include instructions of how the applications is used?",
+        validate: needAnswer,
+    },
+    {
+        type: "list",
+        name: "license",
+        message: "What type of license is this project?",
+        choices: ["MIT License", "GPLv2 License","Apache License","GPLv3 License", "Unlicence", "Other License"],
+        default: "Other License",
+    },
+    {
+        type: "input",
+        name: "contributions",
+        message: "How do users contribute to this project?",
+        validate: needAnswer,
+
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "Are there any special testing procedures? If so, list the instructions.",
+        validate: needAnswer,
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the GitHub username for this project?",
+        validate: needAnswer,
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What email address will be used for this project?",
+        validate: needAnswer,
+    },
+];
+
+
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, function(err){
+//         if(err) {
+//             return console.error(err)
+//         } else {
+//             console.log("Success!")
+//         };
+//     });
+// };
+
+
+// .then((answer) => {
+//     const filename = `${answer.title.toLowerCase().split(" ").join(" ")}.json`;
+
+//     fs.writeFile(filename, JSON.stringify(answer, null, '\t'), (err) =>
+//     err ? console.log(err) :console.log("Success!")
+//     );
+// });
+
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, generateMarkdown(data))
+
+
+}
+
+
+
+
+//Function to initialize the application
+function init() {
+    inquirer.prompt(questions)
+    .then((userResponses) =>
+    // console.log(userResponses)
+    writeToFile("README.md", userResponses)
+    
+    );
+}
+
+//Call to start up the application
+init();
