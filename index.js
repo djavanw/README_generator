@@ -3,8 +3,6 @@ const fs = require("fs");
 const util = require("util");
 const generateMarkdown = require("./mdUtils/generateMarkdown");
 
-
-
 //Question validation, Ensures question is answered
 const needAnswer = function (valueN) {
     if(valueN) {
@@ -14,25 +12,7 @@ const needAnswer = function (valueN) {
     }
 };
 
-// GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
-
-
 //Array of questions for the user to answer.
-
 const questions = [
     {
         type: "input",
@@ -68,16 +48,16 @@ const questions = [
         type: "list",
         name: "license",
         message: "What type of license is this project?",
-        choices: ["MIT", "GPLv2","Apache","GPLv3", "AGPLv3", "AFLv3", "CC","Unlicense", "WTFPL","ECLv2","Other"],
+        choices: ["MIT", "Apache", "GPLv2", "GPLv3", "AGPLv3", "AFLv3", "CC", "Unlicense", "WTFPL", "ECLv2"],
         default: "Unlicense",
     },
     {
         type: "list",
         name: "color",
-        message: "What color?",
-        choices: ["blue", "green", "brightgreen", "yellowgreen", "yellow", "orange", "red", "lightgrey"],
+        message: "What color would you like your license badge?",
+        choices: ["blue", "green", "brightgreen", "yellowgreen", "yellow", "orange", "pink", "lightgrey"],
+        default: "blue",
     },
-
 
     {
         type: "input",
@@ -106,35 +86,11 @@ const questions = [
     },
 ];
 
-
-
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, function(err){
-//         if(err) {
-//             return console.error(err)
-//         } else {
-//             console.log("Success!")
-//         };
-//     });
-// };
-
-
-// .then((answer) => {
-//     const filename = `${answer.title.toLowerCase().split(" ").join(" ")}.json`;
-
-//     fs.writeFile(filename, JSON.stringify(answer, null, '\t'), (err) =>
-//     err ? console.log(err) :console.log("Success!")
-//     );
-// });
-
+//Writing to markdown file
 function writeToFile(fileName, data) {
     console.log(data.license);
     fs.writeFileSync(fileName, generateMarkdown(data))
 }
-
-
-
-
 
 //Function to initialize the application
 function init() {

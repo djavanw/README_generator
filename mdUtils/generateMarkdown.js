@@ -1,3 +1,4 @@
+//Pulling in Arrays of object with license content.
 const licenseObject = require ("./licenseObjects");
 let currentLicense= {};
 
@@ -20,20 +21,44 @@ function renderLicenseLink(license) {
       insertURL = "mit";
       break;
     
-      case "GPLv2":
-        insertURL = "gpl-2.0";
-        break;
-      
-      case "Apache":
-        insertURL = "apache-2.0";
-        break
-      
-      case "GPLv3":
-        insertURL = "gpl-3.0";
-        break
-      
-      default:
-        break;
+  case "GPLv2":
+    insertURL = "gpl-2.0";
+    break;
+  
+  case "Apache":
+    insertURL = "apache-2.0";
+    break;
+  
+  case "GPLv3":
+    insertURL = "gpl-3.0";
+    break;
+
+  case "AGPLv3":
+    insertURL = "agpl-3.0";
+    break;
+
+  case "AFLv3":
+    insertURL = "afl-3.0";
+    break;
+
+  case "CC":
+    insertURL = "cc0-1.0";
+    break;
+
+  case "Unlicense":
+    insertURL = "unlicense";
+    break;
+
+  case "WTFPL":
+    insertURL = "wtfpl";
+    break;
+
+    case "ECLv2":
+      insertURL = "ecl-2.0";
+      break;
+  
+  default:
+    break;
   }
     // currentLicense = licenseObject.find(element=>{
     // console.log(element.name)
@@ -41,7 +66,7 @@ function renderLicenseLink(license) {
     // })
 
 
-  return `[${license} Documentation](https://choosealicense.com/licenses/${insertURL})`
+  return `[${license} Full Documentation](https://choosealicense.com/licenses/${insertURL})`
   //(${currentLicense.url})
 }
 
@@ -55,7 +80,6 @@ function renderLicenseSection(license) {
 
     return currentLicense.content 
 }
-
 
 
 // TODO: Create a function to generate markdown for README
@@ -79,23 +103,23 @@ function generateMarkdown(data) {
 
   ## Description:
   ${data.description}
-
+***
   ## Installation:
   ${data.installation}
-
+***
   ## Usage:
   ${data.usage}
-
+***
   ## License:
   This project falls under the ${data.license}.  The documentation for this license is found at
-  
+
   ${renderLicenseLink(data.license)}
   <br>
    ${renderLicenseSection(data.license)}
 
   ## Contributions:
   The contributors for this project are: ${data.contributions}
-
+***
   ## Tests:
   ${data.tests}
 
