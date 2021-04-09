@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const generateMarkdown = require("./util/generateMarkdown");
+const generateMarkdown = require("./mdUtils/generateMarkdown");
 
 
 
@@ -69,8 +69,16 @@ const questions = [
         name: "license",
         message: "What type of license is this project?",
         choices: ["MIT", "GPLv2","Apache","GPLv3", "AGPLv3", "AFLv3", "CC","Unlicense", "WTFPL","ECLv2","Other"],
-        default: "Other License",
+        default: "Unlicense",
     },
+    {
+        type: "list",
+        name: "color",
+        message: "What color?",
+        choices: ["blue", "green", "brightgreen", "yellowgreen", "yellow", "orange", "red", "lightgrey"],
+    },
+
+
     {
         type: "input",
         name: "contributions",
@@ -99,6 +107,7 @@ const questions = [
 ];
 
 
+
 // function writeToFile(fileName, data) {
 //     fs.writeFile(fileName, data, function(err){
 //         if(err) {
@@ -119,10 +128,10 @@ const questions = [
 // });
 
 function writeToFile(fileName, data) {
+    console.log(data.license);
     fs.writeFileSync(fileName, generateMarkdown(data))
-
-
 }
+
 
 
 
