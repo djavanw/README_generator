@@ -19,7 +19,7 @@
 
 ***
   ## Installation:
-  This application requires a Node.js JavaScript runtime environment and the inquirer module in order to run.  A `.gitignore` file that includes `node_modules/` and `.DS_Store/` must be created in order to not track the `nodes_modules` or upload it to GitHub and this must be accomplished before installing any npm dependencies.  In addition, a `package.json` with the required dependencies must be included into the repository.  This must be created before installing any dependencies by running the following command: ```npm init```.
+  This application requires a Node.js JavaScript runtime environment and the inquirer module in order to run.  A `.gitignore` file that includes `node_modules/` and `.DS_Store/` must be created in order to not track the `nodes_modules` or upload it to GitHub and this must be accomplished before installing any npm dependencies.  In addition, a `package.json` with the required dependencies must be included into the repository.  This must be created before installing any dependencies by running the following command: `npm init`.
 
 ***
   ## Usage:
