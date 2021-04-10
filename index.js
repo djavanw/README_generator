@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("util");
+//const util = require("util");
 const generateMarkdown = require("./mdUtils/generateMarkdown");
 
 //Question validation, Ensures question is answered
@@ -102,7 +102,7 @@ function writeToFile(fileName, data) {
 //Function to initialize the application
 function init() {
     inquirer.prompt(questions)
-    .then((userResponses) => writeToFile("README.md", userResponses));
+    .then((userResponses) => writeToFile("generated_README.md", userResponses));
     } // console.log(userResponses)
        
 //Call to start up the application

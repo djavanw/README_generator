@@ -26,10 +26,6 @@
   This application interacts with a user by asking a series of questions and then formulating the responses into a structured README.md file.  When the user responds to the questions, the responses will be assembled and formatted to make the file.  To start the application, the user must type the following: `node index.js`.
    
 ***
-Screenshots (Invoking Application and Responding to Questions)
-![Image_Invoking_Use_Responses](./assets/images/invoking_and_giving_responses.jpg)
-
-***
   ## License:
   This project falls under the MIT License.  The full documentation for this license can be found at [MIT Full Documentation](https://choosealicense.com/licenses/mit).
 
