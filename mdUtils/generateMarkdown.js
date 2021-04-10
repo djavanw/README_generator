@@ -89,48 +89,52 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license, data.color)}
 
 ***
+
+  ## Description:
+  ${data.description}
+  
+***
   ## Table of Contents:
   1.  [Description](#description)
   2.  [Installation](#installation)
   3.  [Usage](#usage)
   4.  [License](#license)
-  5.  [Contributions](#contributions)
+  5.  [Contributing](#contributing)
   6.  [Tests](#tests)
-  7.  [GitHub](#github)
-  8.  [Questions](#email)
+  7.  [Questions](#questions)
 
-***
-
-  ## Description:
-  ${data.description}
 ***
   ## Installation:
   ${data.installation}
+
 ***
   ## Usage:
   ${data.usage}
+   
 ***
   ## License:
-  This project falls under the ${data.license}.  The documentation for this license is found at
+  This project falls under the ${data.license} License.  The full documentation for this license can be found at ${renderLicenseLink(data.license)}.
 
-  ${renderLicenseLink(data.license)}
+  Below is an excerpt of the ${data.license} License.
   <br>
-   ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license)}
 
-  ## Contributions:
-  The contributors for this project are: ${data.contributions}
+  ## Contributing:
+  The contributors for this project are: ${data.contributors}.
+  <br>
+  ${data.contributing}.
+
 ***
   ## Tests:
   ${data.tests}
 
 ***
-  
   ## Questions:
-  - The GitHub address for this project is ${data.github}.
+  - The GitHub profile for this project is ${data.questions}.
  
   - If there are any questions, the contributor can be reached at ${data.email}.
 
-`;
-}
+`
+};
 
 module.exports = generateMarkdown;

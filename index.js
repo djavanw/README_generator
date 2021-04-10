@@ -26,24 +26,21 @@ const questions = [
         message: "What is the description of the project?",
         validate: needAnswer,
     },
-    {
-        type: "input",
-        name: "toc",
-        message: "List the Table of Contents?",
-        default: "See the different sections."
-    },
+    
     {
         type: "input",
         name: "installation",
         message: "What are the installation instructions?",
         validate: needAnswer,
     },
+
     {
         type: "input",
         name: "usage",
         message: "Include instructions of how the applications is used?",
         validate: needAnswer,
     },
+
     {
         type: "list",
         name: "license",
@@ -51,6 +48,7 @@ const questions = [
         choices: ["MIT", "Apache", "GPLv2", "GPLv3", "AGPLv3", "AFLv3", "CC", "Unlicense", "WTFPL", "ECLv2"],
         default: "Unlicense",
     },
+
     {
         type: "list",
         name: "color",
@@ -61,23 +59,32 @@ const questions = [
 
     {
         type: "input",
-        name: "contributions",
-        message: "How do users contribute to this project?",
+        name: "contributing",
+        message: "What are the guidelines to contribute to this project?",
         validate: needAnswer,
-
     },
+
+    {
+        type: "input",
+        name: "contributors",
+        message: "Who are the contributors of this project?",
+        validate: needAnswer,
+    },
+
     {
         type: "input",
         name: "tests",
         message: "Are there any special testing procedures? If so, list the instructions.",
         validate: needAnswer,
     },
+
     {
         type: "input",
-        name: "github",
+        name: "questions",
         message: "What is the GitHub username for this project?",
         validate: needAnswer,
     },
+    
     {
         type: "input",
         name: "email",
@@ -95,12 +102,8 @@ function writeToFile(fileName, data) {
 //Function to initialize the application
 function init() {
     inquirer.prompt(questions)
-    .then((userResponses) =>
-    // console.log(userResponses)
-    writeToFile("README.md", userResponses)
-    
-    );
-}
-
+    .then((userResponses) => writeToFile("README.md", userResponses));
+    } // console.log(userResponses)
+       
 //Call to start up the application
 init();
