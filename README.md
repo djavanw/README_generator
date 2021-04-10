@@ -6,12 +6,17 @@
 
   ## Description:
   This is a Node.js command-line application that generates a  professional README.md file that can then be inserted into a deployable application.  The application provides the user with a structured template with all of the pertinent information needed in a README.md file.
-  
+
+***
+  ## Demostration:
+  [Video Demo](https://youtu.be/iIibQGXP4Os)
 ***
   ## Table of Contents:
   1.  [Description](#description)
+  9.  [Demostration](#demostration)
   2.  [Installation](#installation)
   3.  [Usage](#usage)
+  8.  [Screenshots](#screenshots)
   4.  [License](#license)
   5.  [Contributing](#contributing)
   6.  [Tests](#tests)
@@ -26,8 +31,12 @@
   This application interacts with a user by asking a series of questions and then formulating the responses into a structured README.md file.  When the user responds to the questions, the responses will be assembled and formatted to make the file.  To start the application, the user must type the following: `node index.js`.
    
 ***
-Screenshots (Invoking Application and Responding to Questions)
-![Image_Invoking_Use_Responses](./assets/images/invoking_and_giving_responses.jpg)
+## Screenshots 
+### (Invoking Application and Responding to Questions)
+![Image_Invoking_User_Responses](./assets/images/invoking_and_giving_responses.jpg)
+
+### (User Prompts with Choices)
+![Image_Prompts_with_Choices](./assets/images/prompts_with_choices.jpg)
 
 ***
   ## License:

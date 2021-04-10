@@ -20,13 +20,14 @@ const questions = [
         message: "What is the title of the project?",
         validate: needAnswer,
     },
+    
     {
         type: "input",
         name: "description",
         message: "What is the description of the project?",
         validate: needAnswer,
     },
-    
+
     {
         type: "input",
         name: "installation",
@@ -95,14 +96,14 @@ const questions = [
 
 //Writing to markdown file
 function writeToFile(fileName, data) {
-    console.log(data.license);
+    console.log("Markdown has been generated.");
     fs.writeFileSync(fileName, generateMarkdown(data))
 }
 
 //Function to initialize the application
 function init() {
     inquirer.prompt(questions)
-    .then((userResponses) => writeToFile("generated_README.md", userResponses));
+    .then((userResponses) => writeToFile("./assets/newfile/generated_README.md", userResponses));
     } // console.log(userResponses)
        
 //Call to start up the application

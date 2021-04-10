@@ -74,7 +74,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   currentLicense= licenseObject.find(element => {
-    console.log(element.name)
+    //console.log(element.name)
     return  element.name ===license
     })
 
