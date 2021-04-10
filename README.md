@@ -40,7 +40,7 @@
   ## Contributing:
   The contributors for this project are: D. Javan Worthy.
   <br>
-  To contribute to this project, please submit pull requests for any minor changes; however, please open an issue for any changes that are significant..
+  To contribute to this project, please submit pull requests for any minor changes; however, please open an issue for any changes that are significant.
 
 ***
   ## Tests:
