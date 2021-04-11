@@ -13,14 +13,14 @@
 ***
   ## Table of Contents:
   1.  [Description](#description)
-  9.  [Demostration](#demostration)
-  2.  [Installation](#installation)
-  3.  [Usage](#usage)
-  8.  [Screenshots](#screenshots)
-  4.  [License](#license)
-  5.  [Contributing](#contributing)
-  6.  [Tests](#tests)
-  7.  [Questions](#questions)
+  2.  [Demostration](#demostration)
+  3.  [Installation](#installation)
+  4.  [Usage](#usage)
+  5.  [Screenshots](#screenshots)
+  6.  [License](#license)
+  7.  [Contributing](#contributing)
+  8.  [Tests](#tests)
+  9.  [Questions](#questions)
 
 ***
   ## Installation:
