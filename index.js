@@ -103,7 +103,7 @@ function writeToFile(fileName, data) {
 //Function to initialize the application
 function init() {
     inquirer.prompt(questions)
-    .then((userResponses) => writeToFile("./assets/newfile/generated_README.md", userResponses));
+    .then((userResponses) => writeToFile("generated_README.md", userResponses));
     } // console.log(userResponses)
        
 //Call to start up the application
